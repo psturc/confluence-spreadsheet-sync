@@ -1,0 +1,8 @@
+---
+confluence_page_url: ''
+spreadsheet:
+  id: ''
+  # Column range from Google SpreadSheet to get data from (e.g. A1:A)
+  column_keys: 'A1:A'
+  # Column range from Google SpreadSheet to sync data to
+  column_values: 'B1:B'

@@ -1,7 +1,11 @@
 ---
 confluence_page_url: ''
 spreadsheet:
+  # Spreadsheed ID, extracted from spreadsheet url
+  # e.g. 1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms
   id: ''
+  # Name of the sheet
+  sheet_name: ''
   # Column range from Google SpreadSheet to get data from (e.g. A1:A)
   column_keys: 'A1:A'
   # Column range from Google SpreadSheet to sync data to

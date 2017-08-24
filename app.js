@@ -59,17 +59,13 @@ function generateUpdatedSheetContent(rows) {
   }
 }
 
-/**
- * Print the names and majors of students in a sample spreadsheet:
- * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- */
 async function getGoogleSheetData(auth) {
   return new Promise((resolve, reject) => {
     let sheets = google.sheets('v4')
     sheets.spreadsheets.values.get({
       auth: auth,
       spreadsheetId: config.spreadsheet.id,
-      range: `Class Data!${config.spreadsheet.column_keys}`,
+      range: `${config.spreadsheet.sheet_name}!${config.spreadsheet.column_keys}`,
     }, function(err, response) {
       if (err) {
         reject('The API returned an error: ' + err)
@@ -94,7 +90,7 @@ function updateGoogleSheet(auth) {
     auth: auth,
     valueInputOption: 'USER_ENTERED',
     spreadsheetId: config.spreadsheet.id,
-    range: `Class Data!${config.spreadsheet.column_values}`,
+    range: `${config.spreadsheet.sheet_name}!${config.spreadsheet.column_values}`,
     resource: body
   }, function(err, result) {
     if (err) {
